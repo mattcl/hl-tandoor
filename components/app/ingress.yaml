@@ -1,0 +1,19 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ingress
+  annotations:
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`tandoor.hl.ancalagon.black`)
+      priority: 10
+      services:
+        - name: tandoor-svc
+          port: 80
+  tls:
+    certResolver: default
