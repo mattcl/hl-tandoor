@@ -10,10 +10,22 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`tandoor.hl.ancalagon.black`)
+      match: Host(`tandoor.hl.ancalagon.black`) && PathPrefix("/media")
       priority: 10
       services:
         - name: tandoor-svc
           port: 80
+    - kind: Rule
+      match: Host(`tandoor.hl.ancalagon.black`) && PathPrefix("/static")
+      priority: 9
+      services:
+        - name: tandoor-svc
+          port: 80
+    - kind: Rule
+      match: Host(`tandoor.hl.ancalagon.black`)
+      priority: 8
+      services:
+        - name: tandoor-svc
+          port: 8080
   tls:
     certResolver: default
