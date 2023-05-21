@@ -31,7 +31,7 @@ spec:
         envFrom:
           - configMapRef:
               name: "tandoor-postgres-config"
-        image: vabene1111/recipes
+        image: vabene1111/recipes:latest
         imagePullPolicy: Always
         resources:
           requests:
@@ -92,7 +92,7 @@ spec:
             subPath: nginx-config
             readOnly: true
       - name: recipes
-        image: vabene1111/recipes
+        image: vabene1111/recipes:latest
         imagePullPolicy: IfNotPresent
         command:
           - /opt/recipes/venv/bin/gunicorn
