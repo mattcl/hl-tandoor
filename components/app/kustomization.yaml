@@ -12,12 +12,12 @@ commonLabels:
   app: tandoor
   tier: application
 configMapGenerator:
-  - name: tandoor-nginx-config
+  - name: nginx-config
     files:
       - nginx-config
-  - name: tandoor-postgres-config
+  - name: postgres-config
     envs:
       - postgres.env
-  - name: tandoor-app-config
+  - name: app-config
     envs:
       - app.env
