@@ -5,6 +5,8 @@ metadata:
   name: ingress
   annotations:
     kubernetes.io/ingress.class: traefik-external
+  labels:
+    traffic-type: external
 spec:
   entryPoints:
     - websecure
