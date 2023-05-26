@@ -4,25 +4,25 @@ kind: IngressRoute
 metadata:
   name: ingress
   annotations:
-    kubernetes.io/ingress.class: traefik-internal
+    kubernetes.io/ingress.class: traefik-external
 spec:
   entryPoints:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`tandoor.hl.ancalagon.black`) && PathPrefix("/media")
+      match: Host(`tandoor.ancalagon.black`) && PathPrefix("/media")
       priority: 10
       services:
         - name: tandoor-svc
           port: 80
     - kind: Rule
-      match: Host(`tandoor.hl.ancalagon.black`) && PathPrefix("/static")
+      match: Host(`tandoor.ancalagon.black`) && PathPrefix("/static")
       priority: 9
       services:
         - name: tandoor-svc
           port: 80
     - kind: Rule
-      match: Host(`tandoor.hl.ancalagon.black`)
+      match: Host(`tandoor.ancalagon.black`)
       priority: 8
       services:
         - name: tandoor-svc
