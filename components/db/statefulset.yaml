@@ -111,7 +111,6 @@ spec:
   volumeClaimTemplates:
   - apiVersion: v1
     kind: PersistentVolumeClaim
-    namespace: tandoor
     metadata:
       name: data
     spec:
