@@ -10,4 +10,4 @@ spec:
       targetPort: postgresql
       protocol: TCP
   sessionAffinity: None
-  clusterIp: None
+  clusterIP: None
