@@ -144,18 +144,18 @@ spec:
                 key: postgresql-postgres-password
         envFrom:
           - configMapRef:
-              name: "tandoor-postgres-config"
+              name: "postgres-config"
           - configMapRef:
-              name: "tandoor-app-config"
+              name: "app-config"
         securityContext:
           runAsUser: 65534
       volumes:
         - name: media
           persistentVolumeClaim:
-            claimName: tandoor-media
+            claimName: media
         - name: static
           persistentVolumeClaim:
-            claimName: tandoor-static
+            claimName: static
         - name: nginx-config
           configMap:
-            name: tandoor-nginx-config
+            name: nginx-config
