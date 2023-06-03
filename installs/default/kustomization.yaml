@@ -6,3 +6,10 @@ resources:
   - ../../components/db
   - ../../components/app
 namespace: tandoor
+images:
+  - name: vabene1111/recipes
+    newTag: latest
+  - name: nginx
+    newTag: latest
+  - name: docker.io/bitnami/postgresql
+    newTag: 11.5.0-debian-O-r60
